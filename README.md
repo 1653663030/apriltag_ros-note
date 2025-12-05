@@ -1,10 +1,10 @@
 # apriltag_ros
 
 `apriltag_ros` is a Robot Operating System (ROS) wrapper of the [AprilTag 3 visual fiducial detector](https://april.eecs.umich.edu/software/apriltag.html). For details and tutorials, please see the [ROS wiki](http://wiki.ros.org/apriltag_ros).
+apriltag_ros是一个ROS封装包，封装的是AprilTag 3视觉基准检测的源码。
 
 `apriltag_ros` depends on the latest release of the [AprilTag library](https://github.com/AprilRobotics/apriltag). Clone it into your catkin workspace before building.
-
-**Authors**: Danylo Malyuta, Wolfgang Merkt
+apriltag_ros依赖于最新版本的AprilTag。
 
 **Maintainers**: [Danylo Malyuta](mailto:danylo.malyuta@gmail.com) ([Autonomous Control Laboratory](https://www.aa.washington.edu/research/acl), University of Washington), [Wolfgang Merkt](https://github.com/wxmerkt)
 
@@ -13,14 +13,14 @@
 Starting with a working ROS installation (Kinetic and Melodic are supported):
 ```
 export ROS_DISTRO=melodic               # Set this to your distro, e.g. kinetic or melodic
-source /opt/ros/$ROS_DISTRO/setup.bash  # Source your ROS distro 
-mkdir -p ~/catkin_ws/src                # Make a new workspace 
-cd ~/catkin_ws/src                      # Navigate to the source space
-git clone https://github.com/AprilRobotics/apriltag.git      # Clone Apriltag library
-git clone https://github.com/AprilRobotics/apriltag_ros.git  # Clone Apriltag ROS wrapper
-cd ~/catkin_ws                          # Navigate to the workspace
-rosdep install --from-paths src --ignore-src -r -y  # Install any missing packages
-catkin build    # Build all packages in the workspace (catkin_make_isolated will work also)
+source /opt/ros/$ROS_DISTRO/setup.bash  # Source your ROS distro ，设置环境变量
+mkdir -p ~/catkin_ws/src                # Make a new workspace ，创建工作空间
+cd ~/catkin_ws/src                      # Navigate to the source space ，移动到工作空间
+git clone https://github.com/AprilRobotics/apriltag.git      # Clone Apriltag library ，克隆需要的依赖（apriltag）
+git clone https://github.com/AprilRobotics/apriltag_ros.git  # Clone Apriltag ROS wrapper ，克隆ROS封装包
+cd ~/catkin_ws                          # Navigate to the workspace ，移动到工作空间
+rosdep install --from-paths src --ignore-src -r -y  # Install any missing packages ，补充缺少的依赖（我的这个好像用不了？？？）
+catkin build    # Build all packages in the workspace (catkin_make_isolated will work also) ，编译工作空间内的包
 ```
 See the [ROS wiki](http://wiki.ros.org/apriltag_ros) for details and tutorials.
 
